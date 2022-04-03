@@ -3,4 +3,5 @@
 
 This repository contains the works of Lucas De Lorenzi for each challenge of the Radium Rocket BaSP 2022 course.
 
-* Semana-01: Contains a landing web index.html
+* Semana-02: Contains a landing web index.html
+* Semana-03: Contains the previous landing web index.html with their respective css files
