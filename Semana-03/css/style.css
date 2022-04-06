@@ -16,6 +16,10 @@ header {
   left: 0;
   box-sizing: content-box;
 }
+
+a {
+  color: #373867;
+}
 .hdr-container {
   width: 77.63%;
   height: 43px;
@@ -62,7 +66,7 @@ header {
   font-size: small;
   text-align: center;
 }
-.fa-twitter {
+.twitter {
   width: 12.92px;
   height: 10.51px;
   position: absolute;
@@ -78,7 +82,7 @@ header {
   font-size: small;
   text-align: center;
 }
-.fa-linkedin {
+.linkedin {
   width: 12.1px;
   height: 12.1px;
   position: absolute;
@@ -94,7 +98,7 @@ header {
   font-size: medium;
   text-align: center;
 }
-.fa-instagram {
+.instagram {
   width: 13.2px;
   height: 13.2px;
   position: absolute;
@@ -110,7 +114,7 @@ header {
   font-size: medium;
   text-align: center;
 }
-.fa-github {
+.github {
   width: 15px;
   height: 15px;
   position: absolute;
@@ -189,7 +193,9 @@ article p {
 #art-2,
 #art-3,
 #art-4,
-form {
+form,
+.lists,
+.page-index {
   margin-right: 2.8%;
 }
 #art-2 h2,
@@ -442,4 +448,180 @@ form textarea {
   margin-left: 725px;
   margin-top: 15px;
   cursor: pointer;
+}
+
+.lists {
+  text-align: center;
+  margin-top: 200px;
+}
+.lists h3 {
+  margin-left: -16px;
+  margin-bottom: 13px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+.lists .list-column {
+  display: inline-block;
+  text-align: start;
+}
+.list-column ol {
+  list-style-type: decimal;
+  text-align: start;
+}
+.list-column ol a li {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+#column-list-1 {
+  margin-right: 250px;
+}
+#column-list-3 {
+  margin-left: 250px;
+}
+
+.page-index {
+  text-align: center;
+  height: 500px;
+  margin-left: 23px;
+  padding-top: 106px;
+}
+
+#list-index {
+  text-align: center;
+  position: absolute;
+  left: 29%;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 120%;
+}
+#list-index a {
+  width: 57.67px;
+  height: 46px;
+  display: inline-block;
+  text-align: center;
+}
+#list-index a:hover {
+  border: 1px solid #373867;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+#list-index a:active {
+  background: #373867;
+  color: #ffffff;
+}
+.page-index ul a li {
+  display: inline-block;
+  width: 57.67px;
+  height: 46px;
+  position: relative;
+  top: 15px;
+}
+
+.page-index button {
+  width: 95px;
+  height: 46px;
+  border: 2px solid;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 120%;
+  cursor: pointer;
+}
+.page-index button:hover {
+  border: 2px solid rgba(55, 56, 103, 0.5);
+}
+
+.page-index button:active {
+  background: #373867;
+  color: #ffffff;
+}
+#button-prev {
+  float: left;
+  margin-left: 275px;
+}
+#button-next {
+  margin-left: 275px;
+}
+
+footer {
+  width: 81.38%;
+  height: 300px;
+  position: absolute;
+  right: 0;
+  top: 5105px;
+  text-align: center;
+  margin-left: 23px;
+}
+#footer-icons {
+  margin-top: 15px;
+  margin-right: 2.8%;
+  margin-left: 23px;
+  border-top: 3px solid;
+  padding-top: 15px;
+}
+
+#footer-icons > a {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  margin-right: 15px;
+}
+#fb-icon-footer {
+  color: #1877f2;
+}
+#tw-icon-footer {
+  color: #ffffff;
+  background-color: #1d9bf0;
+  border-radius: 50%;
+  font-size: small;
+  text-align: center;
+}
+.twitter-footer {
+  width: 12.92px;
+  height: 10.51px;
+}
+#li-icon-footer {
+  color: #ffffff;
+  background-color: #0a66c2;
+  border-radius: 50%;
+  font-size: small;
+  text-align: center;
+}
+.linkedin-footer {
+  width: 12.1px;
+  height: 12.1px;
+}
+#ig-icon-footer {
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 50%;
+  font-size: medium;
+  text-align: center;
+}
+.instagram-footer {
+  width: 13.2px;
+  height: 13.2px;
+}
+#gh-icon-footer {
+  color: #ffffff;
+  background-color: #191717;
+  border-radius: 50%;
+  font-size: medium;
+  text-align: center;
+}
+.github-footer {
+  width: 15px;
+  height: 15px;
+}
+footer p {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 25px;
+  margin-right: 2.37%;
 }
