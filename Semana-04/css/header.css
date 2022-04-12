@@ -27,7 +27,7 @@ header {
   height: 100%;
 }
 
-.social-network-icons {
+.social-network-icons, #hdr-logo {
   display: none;
 }
 
