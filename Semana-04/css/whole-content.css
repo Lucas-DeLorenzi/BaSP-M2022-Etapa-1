@@ -4,6 +4,8 @@
   /* HEADER */
   header {
     height: 199px;
+    width: 85%;
+    margin-left: 15%;
   }
 
   .hdr-container {
@@ -21,13 +23,7 @@
   }
 
   .menu-icon {
-    padding-top: 15px;
-    padding-left: 12px;
-    width: 40px;
-    height: 47px;
-  }
-  .menu-icon a {
-    font-size: 32px;
+    display: none;
   }
 
   .hdr-title {
@@ -45,12 +41,27 @@
   }
 
   .separator-bar {
-    width: 398px;
+    width: 140%;
+  }
+
+  /* SIDEBAR */
+
+  aside {
+    display: inline-block;
+    width: 15%;
+    height: 100vh;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #afafc2;
   }
 
   /* MAIN */
   main {
+    width: 85%;
     padding: 199px 62px 0;
+    margin-left: 15%;
   }
 
   #art-1 h1 {
@@ -218,7 +229,9 @@
   /* FOOTER */
 
   footer {
+    width: 85%;
     height: 150px;
+    margin-left: 15%;
   }
 }
 
@@ -232,6 +245,7 @@
     left: 15%;
     width: 85%;
     height: 102px;
+    margin-left: 0;
   }
 
   .hdr-container {
