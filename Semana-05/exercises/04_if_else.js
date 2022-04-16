@@ -12,6 +12,8 @@
         vii. “Anciano” si es mayor a 75 años.
 */
 
+console.log("4. If else");
+
 //  a.
 
 console.log(
