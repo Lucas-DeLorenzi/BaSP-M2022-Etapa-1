@@ -5,5 +5,6 @@ This repository contains the works of Lucas De Lorenzi for each challenge of the
 
 * Semana-02: Contains a landing web index.html
 * Semana-03: Contains the previous landing web index.html with their respective css files
-* Semana-04: Landing page rework for responsive design by using flexbox
+* Semana-04: Landing page rework for responsive design by using flexbox.
+    * _Click **[here](https://lucas-delorenzi.github.io/BaSP-M2022-Etapa-1/Semana-04/index.html)** to go to its deployment on Gh pages.._
 * Semana-05: Contains js exercises
