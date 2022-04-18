@@ -4,6 +4,7 @@
   font-family: "Roboto", sans-serif;
   color: #373867;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 ol,
@@ -11,7 +12,8 @@ ul {
   list-style-type: none;
 }
 
-li, a {
+li,
+a {
   text-decoration: none;
 }
 
@@ -27,16 +29,15 @@ header {
   height: 100%;
 }
 
-.social-network-icons, #hdr-logo {
+.social-network-icons,
+#hdr-logo {
   display: none;
 }
 
 .menu-icon {
   float: left;
-  width: 34px;
-  height: 37px;
   padding-top: 12px;
-  padding-left: 7px;
+  padding-left: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,8 +48,6 @@ header {
 }
 
 .hdr-title {
-  height: 100%;
-  padding-right: 34px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -74,7 +73,84 @@ header {
 
 .separator-bar {
   width: 267px;
-  height: 2px;
   border-bottom: 2px solid #000;
   align-self: center;
+}
+
+/* TABLET DESIGN */
+
+@media (min-width: 768px) {
+  header {
+    height: 199px;
+    width: 85%;
+    margin-left: 15%;
+  }
+
+  .hdr-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #hdr-logo {
+    width: 123px;
+    height: 123px;
+    display: flex;
+    align-self: center;
+    margin-right: 23%;
+    margin-left: 17px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .hdr-title {
+    margin-right: 40px;
+  }
+
+  .hdr-title h2 {
+    font-size: 60px;
+    margin-top: 40px;
+  }
+
+  .hdr-title h3 {
+    margin-bottom: 50px;
+  }
+
+  .separator-bar {
+    width: 120%;
+  }
+}
+
+/* DESKTOP DESIGN */
+
+@media (min-width: 1024px) {
+  header {
+    left: 15%;
+    width: 85%;
+    height: 102px;
+    margin-left: 0;
+  }
+
+  .hdr-container {
+    background: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 3px solid;
+    margin: 0 3%;
+  }
+
+  .social-network-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 182px;
+    margin-bottom: 25px;
+  }
+
+  .social-network-icons a {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+  }
 }
