@@ -3,22 +3,21 @@ aside {
 }
 
 main {
-  padding: 25% 7% 0 7%;
   width: 100%;
+  padding: 25% 7% 0 7%;
 }
 
 button {
-  cursor: pointer;
+  margin: 30px 0;
+  padding: 14px 36px;
   background: #aace9b;
-  border-radius: 5px;
   border: none;
+  border-radius: 5px;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
   text-transform: uppercase;
-  margin: 30px 0;
-  padding: 14px 36px;
-  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .main-section {
@@ -55,24 +54,24 @@ form {
 }
 
 #art-1 h2 {
+  margin-top: 18px;
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 18px;
 }
 
 #art-1 p {
+  align-self: center;
+  margin-top: 13px;
   font-size: 13px;
   line-height: 15px;
-  margin-top: 13px;
-  align-self: center;
 }
 
 #art-1 img {
+  order: -1;
   width: 100%;
   margin-top: 26px;
-  order: -1;
 }
 
 #art-2 .art-2-dktop {
@@ -86,23 +85,23 @@ form {
 }
 
 #art-2 .art-2-tablet-mobile h3 {
+  margin-top: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
-  margin-top: 20px;
 }
 
 #art-2 .art-2-tablet-mobile p {
+  margin-top: 16px;
   font-size: 10px;
   line-height: 15px;
   color: rgba(0, 0, 0, 0.23);
-  margin-top: 16px;
 }
 
 #art-2 .art-2-tablet-mobile button {
-  padding: 15px 48px;
   margin-top: 20px;
   margin-left: 7px;
+  padding: 15px 48px;
   font-weight: 700 bold;
   font-size: 10px;
   line-height: 15px;
@@ -110,12 +109,12 @@ form {
 
 #art-3 h2,
 #art-4 h2 {
+  margin-top: 40px;
+  margin-bottom: 30px;
   font-weight: 700;
   font-size: 25px;
   line-height: 29px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 40px;
-  margin-bottom: 30px;
 }
 
 .img-text-boxes {
@@ -144,13 +143,13 @@ form {
 }
 
 form h3 {
+  margin-bottom: 42px;
+  padding: 0px 50px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  padding: 0px 50px;
-  margin-bottom: 42px;
 }
 
 form .name-email {
@@ -166,15 +165,15 @@ textarea,
 #email {
   width: 100%;
   height: 37px;
+  margin-bottom: 28px;
+  padding-left: 16px;
   background: #f6f3f3;
+  border: none;
   border-radius: 4px;
   font-weight: 400;
   font-size: 10px;
   line-height: 15px;
   color: #000000;
-  border: none;
-  margin-bottom: 28px;
-  padding-left: 16px;
 }
 
 textarea {
@@ -203,23 +202,23 @@ form .checkbox-2 {
 }
 
 .checkbox-2 :nth-child(1) label {
+  margin-left: 10px;
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 10px;
   line-height: 15px;
-  margin-left: 10px;
-  margin-bottom: 10px;
 }
 
 .submit-button {
   width: 134px;
   height: 37px;
   background: #aace9b;
-  border-radius: 5px;
   border: none;
-  text-transform: uppercase;
+  border-radius: 5px;
   font-weight: 700;
   font-size: 10px;
   line-height: 15px;
+  text-transform: uppercase;
 }
 
 .checkbox-2 :nth-child(2) button {
@@ -227,8 +226,8 @@ form .checkbox-2 {
   justify-content: center;
   width: 134px;
   height: 37px;
-  border: 1px solid;
   background: #f6f3f3;
+  border: 1px solid;
   border-radius: 4px;
   font-weight: 700;
   font-size: 10px;
@@ -252,13 +251,13 @@ form .checkbox-2 {
 }
 
 .lists h3 {
+  width: 190px;
+  margin: 30px 0;
+  padding: 0 38% 0 12%;
+  border-bottom: 2px solid #000;
   font-weight: 700;
   font-size: 24px;
   line-height: 37px;
-  border-bottom: 2px solid #000;
-  padding: 0 38% 0 12%;
-  width: 190px;
-  margin: 30px 0;
 }
 
 .lists li {
@@ -273,8 +272,8 @@ form .checkbox-2 {
 
 @media (min-width: 768px) {
   main {
-    width: 85%;
-    margin-left: 15%;
+    width: 75%;
+    margin-left: 25%;
   }
 
   #art-1 h1 {
@@ -297,22 +296,22 @@ form .checkbox-2 {
   }
 
   #art-1 button {
+    margin-bottom: 50px;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom: 50px;
   }
 
   #art-2 .art-2-tablet-mobile h3 {
+    align-self: center;
     font-size: 30px;
     line-height: 46px;
-    align-self: center;
   }
 
   #art-2 .art-2-tablet-mobile p {
+    margin-bottom: 30px;
     font-weight: 700;
     font-size: 18px;
     line-height: 28px;
-    margin-bottom: 30px;
   }
 
   #art-2 .art-2-tablet-mobile button {
@@ -344,11 +343,11 @@ form .checkbox-2 {
   }
 
   form h3 {
+    margin-top: 60px;
+    padding: 20px 70px;
     font-size: 30px;
     line-height: 46px;
     color: #000000;
-    padding: 20px 70px;
-    margin-top: 60px;
   }
 
   form select,
@@ -356,8 +355,8 @@ form .checkbox-2 {
   #name,
   #email {
     height: 52px;
-    border: 1px solid;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid;
     border-radius: 4px;
     font-size: 24px;
     line-height: 28px;
@@ -383,34 +382,34 @@ form .checkbox-2 {
   }
 
   .submit-button {
-    padding: 0 15px 0 15px;
-    margin-top: 30px;
     width: auto;
     height: 56px;
+    margin-top: 30px;
+    padding: 0 15px 0 15px;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
   }
 
   .checkbox-2 :nth-child(2) button {
-    margin: 30px 0 0 40px;
     width: 190px;
     height: 56px;
+    margin: 30px 0 0 40px;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
   }
 
   .lists h3 {
+    width: 280px;
     font-size: 48px;
     line-height: 74px;
-    width: 280px;
   }
 
   .list-column ol a li {
+    margin: 30px 0;
     font-size: 16px;
     line-height: 25px;
-    margin: 30px 0;
   }
 }
 
@@ -418,7 +417,9 @@ form .checkbox-2 {
 
 @media (min-width: 1024px) {
   main {
-    padding-top: 15%;
+    width: 85%;
+    margin-left: 15%;
+    padding-top: 12%;
   }
 
   .menu-icon,
@@ -463,18 +464,18 @@ form .checkbox-2 {
   }
 
   #art-1 img {
-    height: 640px;
-    width: 400px;
     order: 1;
+    width: 400px;
+    height: 640px;
   }
 
   #art-1 button {
     background: #fff;
-    color: #373867;
     border: 2px solid #373867;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
+    color: #373867;
   }
 
   #art-2 .art-2-dktop {
@@ -506,13 +507,13 @@ form .checkbox-2 {
   #art-3 h2,
   #art-4 h2 {
     width: 70%;
+    margin-bottom: 60px;
+    margin-top: 60px;
     font-weight: bold;
     font-size: 60px;
     line-height: 70px;
-    -webkit-text-stroke: 1px #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 60px;
-    margin-top: 60px;
+    -webkit-text-stroke: 1px #000000;
   }
 
   #art-3,
@@ -539,9 +540,9 @@ form .checkbox-2 {
   }
 
   .img-text-boxes .txt-boxes h3 {
+    margin-bottom: 25px;
     font-size: 20px;
     line-height: 23px;
-    margin-bottom: 25px;
   }
 
   .img-text-boxes .txt-boxes p {
@@ -554,14 +555,14 @@ form .checkbox-2 {
   }
 
   form h3 {
+    margin-bottom: 100px;
+    padding: 0 10px;
+    border-top: none;
+    border-bottom: 4px solid #f56a6a;
     font-weight: 700;
     font-size: 60px;
     line-height: 70px;
     color: #231f20;
-    border-top: none;
-    border-bottom: 4px solid #f56a6a;
-    margin-bottom: 100px;
-    padding: 0 10px;
   }
 
   form .checkbox-1 {
@@ -579,14 +580,14 @@ form .checkbox-2 {
   #name,
   #email {
     height: 30px;
+    margin-bottom: 20px;
+    padding-left: 16px;
     background: #fff;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border: 1px solid #373867;
     font-size: 14px;
     line-height: 16px;
     color: #000000;
-    border: 1px solid #373867;
-    margin-bottom: 20px;
-    padding-left: 16px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
   }
 
   #name,
@@ -619,14 +620,14 @@ form .checkbox-2 {
   }
 
   .submit-button {
-    border: 1px solid #373867;
-    text-align: center;
     width: auto;
     height: 34px;
+    margin: 0;
+    border: 1px solid #373867;
+    text-align: center;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    margin: 0;
   }
 
   .lists {
@@ -637,12 +638,11 @@ form .checkbox-2 {
   }
 
   .lists h3 {
+    width: 150px;
+    border-bottom: none;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    width: 280px;
-    border-bottom: none;
-    width: 150px;
   }
 
   .list-column ol {
@@ -650,10 +650,10 @@ form .checkbox-2 {
   }
 
   .list-column ol a li {
+    margin: 0px 32px;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    margin: 0px 32px;
     color: #373867;
   }
 
@@ -666,10 +666,10 @@ form .checkbox-2 {
   .page-index button {
     width: 95px;
     height: 46px;
-    border: 2px solid;
     box-sizing: border-box;
-    border-radius: 10px;
     background-color: #ffffff;
+    border: 2px solid;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 11px;
     line-height: 120%;
@@ -696,14 +696,14 @@ form .checkbox-2 {
   }
 
   .page-index ul a {
-    width: 57.67px;
-    height: 46px;
     display: flex;
     align-items: center;
+    width: 57.67px;
+    height: 46px;
   }
   .page-index ul a:hover {
-    border: 1px solid #373867;
     box-sizing: border-box;
+    border: 1px solid #373867;
     border-radius: 5px;
   }
   .page-index ul a:active {
