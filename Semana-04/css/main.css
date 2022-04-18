@@ -666,6 +666,7 @@ form .checkbox-2 {
   .page-index button {
     width: 95px;
     height: 46px;
+    padding: 0;
     box-sizing: border-box;
     background-color: #ffffff;
     border: 2px solid;
