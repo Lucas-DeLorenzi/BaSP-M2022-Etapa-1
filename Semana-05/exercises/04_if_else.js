@@ -19,8 +19,10 @@ console.log("4. If else");
 console.log(
   "   a. Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o igual que 0,5 mostrar una alerta con el mensaje “Greater than 0,5” y sino un alerta con el mensaje “Lower than 0,5”."
 );
+
 var numRnd = Math.random();
 console.log("   numRnd: " + numRnd);
+
 if (numRnd > 0.5) {
   alert("Greater than 0,5");
 } else {
@@ -34,9 +36,11 @@ console.log(
 );
 
 var age = Math.round(Math.random() * 100);
+
 console.log(
   "   age: " + age + "\n************************************************"
 );
+
 if (age < 2) {
   alert("Bebé");
 } else if (age <= 12) {

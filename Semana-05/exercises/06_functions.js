@@ -52,6 +52,7 @@ function sum(num1, num2) {
 }
 
 var executeSum = sum(num1, num2);
+
 console.log("   num1: " + num1 + "  num2: " + num2);
 console.log("   Resultado de sum: " + executeSum);
 
@@ -96,13 +97,14 @@ function sum(num1, num2) {
 }
 
 executeSum = sum(num1, num2);
+
 console.log("   num1: " + num1 + "  num2: " + num2);
 console.log("   El resultado de sum es: " + executeSum);
 
 //  e.
 
 console.log(
-  "       e. Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual."
+  "   e. Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual."
 );
 
 num1 = 33.8;
@@ -133,6 +135,7 @@ function validateIntInSum(num1, num2) {
 }
 
 executeSum = sum(num1, num2);
+
 console.log("   num1: " + num1 + "  num2: " + num2);
 console.log(
   "   El resultado de sum es: " +
