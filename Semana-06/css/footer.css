@@ -1,0 +1,111 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  margin-top: 40px;
+  background: #ededed;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 182px;
+  margin-top: 28px;
+}
+
+.footer-icons a {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+#fb-icon-footer i {
+  font-size: 22px;
+  color: #1877f2;
+}
+
+#tw-icon-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d9bf0;
+  border-radius: 50%;
+}
+
+#tw-icon-footer i {
+  font-size: small;
+  color: #fff;
+}
+
+#li-icon-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a66c2;
+  border-radius: 50%;
+}
+
+#li-icon-footer i {
+  font-size: 15px;
+  color: #fff;
+}
+
+#ig-icon-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 50%;
+}
+
+#ig-icon-footer i {
+  font-size: 15px;
+  color: #fff;
+}
+
+#gh-icon-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 50%;
+}
+
+#gh-icon-footer i {
+  font-size: 15px;
+  color: #fff;
+}
+
+footer p {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+
+/* TABLET DESIGN */
+
+@media (min-width: 768px) {
+  footer {
+    width: 75%;
+    height: 150px;
+    margin-left: 25%;
+  }
+}
+
+/* DESKTOP DESIGN */
+
+@media (min-width: 1024px) {
+  footer {
+    width: 80%;
+    margin-left: 18%;
+    background-color: #fff;
+    border-top: 3px solid;
+  }
+}
