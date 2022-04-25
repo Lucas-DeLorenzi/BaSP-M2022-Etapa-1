@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 
-body {
+body, input, button, select {
   font-family: "Roboto", sans-serif;
 }
 

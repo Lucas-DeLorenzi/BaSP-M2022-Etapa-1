@@ -1,0 +1,68 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  height: 70vh;
+  margin: 40px 0;
+  background: #ebebf0;
+  box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 18px;
+}
+
+.login-form {
+  width: 80%;
+  height: 70%;
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#login-email,
+#login-password {
+  width: 100%;
+  height: 37px;
+  padding: 0 10px;
+  background-color: #ebebf0;
+  border: none;
+  border-bottom: 1px solid #373867;
+  border-radius: 3px;
+  outline: none;
+}
+
+.alert-message {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 15px ;
+  font-size: 12px;
+  color: #d12500;
+}
+
+.login-remember-password {
+  align-self: flex-start;
+}
+
+.forgot-password {
+  align-self: flex-end;
+}
+
+.login-form button {
+  width: 100%;
+  margin: 0;
+  background: rgba(55, 56, 103, 0.58);
+  color: #fff;
+}

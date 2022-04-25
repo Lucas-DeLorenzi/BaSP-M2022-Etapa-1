@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/modal.css" />
+    <script src="../javascript/login.js" defer></script>
+    <title>Landing web</title>
+  </head>
+  <body>
+    <header>
+      <nav class="hdr-container">
+        <span class="menu-icon">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </span>
+        <img id="hdr-logo" src="../images/hdr-icon.png" alt="logo" />
+        <div class="hdr-title">
+          <h2>Trackgenix</h2>
+          <div class="separator-bar"></div>
+          <h3>Subheader</h3>
+        </div>
+        <span class="social-network-icons">
+          <a id="fb-icon-footer" href="http://www.facebook.com" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a id="tw-icon-footer" href="http://www.twitter.com" target="_blank"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a id="li-icon-footer" href="http://www.linkedin.com" target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a id="ig-icon-footer" href="http://www.instagram.com" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a id="gh-icon-footer" href="http://www.github.com" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </span>
+      </nav>
+    </header>
+    <main>
+      <div class="login-container">
+        <h2 class="login-title">Sign In</h2>
+        <form action="#" class="login-form">
+          <input type="email" name="email" id="login-email" placeholder="Email"/>
+          <div class="alert-message invalid-email"></div>
+          <input type="password" name="password" id="login-password" placeholder="Password" />
+          <div class="alert-message invalid-pass"></div>
+          <div class="login-remember-password">
+            <input type="checkbox" name="password" id="remember-password" />
+            <label for="remember-password">Remember me</label>
+          </div>
+          <div class="forgot-password">Forgot password?</div>
+          <button>Continue</button>
+        </form>
+      </div>
+    </main>
+    <aside>
+      <nav>
+        <div class="sidebar-menu">
+          <div id="menu-box">
+            <div class="separator-line">
+              <h4>Menu</h4>
+              <ul>
+                <a href="../views/index.html">
+                  <li>Home</li>
+                </a>
+                <a href="#">
+                  <li>SingUp</li>
+                </a>
+                <a href="#">
+                  <li>Login</li>
+                </a>
+                <a href="#">
+                  <li>Contact</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <a class="menu-sidebar-icon" href="#"
+            ><i class="fa-solid fa-bars"></i
+          ></a>
+        </div>
+        <div class="get-in-touch-box">
+          <h4>Get in touch</h4>
+          <ul>
+            <a href="#">
+              <li>Worked hours</li>
+            </a>
+            <a href="#">
+              <li>Reports</li>
+            </a>
+            <a href="#">
+              <li>Management</li>
+            </a>
+            <a href="#">
+              <li>Roles</li>
+            </a>
+          </ul>
+        </div>
+        <div class="trackgenix-box">
+          <h4>Trackgenix</h4>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </nav>
+    </aside>
+    <footer class="footer">
+      <div class="footer-icons">
+        <a id="fb-icon-footer" href="http://www.facebook.com" target="_blank"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a id="tw-icon-footer" href="http://www.twitter.com" target="_blank"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a id="li-icon-footer" href="http://www.linkedin.com" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a id="ig-icon-footer" href="http://www.instagram.com" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a id="gh-icon-footer" href="http://www.github.com" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <p>Copyright &copy; 2022</p>
+    </footer>
+  </body>
+</html>
