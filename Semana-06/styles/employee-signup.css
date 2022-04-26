@@ -1,0 +1,31 @@
+.signup-container {
+  height: auto;
+}
+
+.signup-title,
+.signup-form button {
+  margin: 35px;
+}
+.signup-form input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 2px;
+  padding: 10px 12px;
+  border: 1px solid #373867;
+  background-color: #ebebf0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  outline: none;
+}
+
+.signup-form input:focus {
+  box-shadow: none;
+  border: 2px solid #373867;
+}
+
+.signup-form label {
+  align-self: flex-start;
+  margin-bottom: 4px;
+  font-size: 1em;
+  font-weight: 500;
+}

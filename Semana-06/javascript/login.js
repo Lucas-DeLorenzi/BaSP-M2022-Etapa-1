@@ -76,7 +76,7 @@ function checkLogin(e){
 }
 
 function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
+    var re = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
     return re.test(email);
   }
 
@@ -84,7 +84,7 @@ function validateAlphanumeric(pass) {
   var validateLetters = 0;
   var validateNumbers = 0;
   var validateBoth = true;
-  pass.toLowerCase().split("").forEach((element) => {
+  pass.toLowerCase().split("").forEach(function(element){
       if (letters.includes(element)) validateLetters++;
       if (numbers.includes(element)) validateNumbers++;
       if (!letters.includes(element) && !numbers.includes(element)){
