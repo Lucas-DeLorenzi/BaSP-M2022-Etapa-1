@@ -29,14 +29,23 @@
   font-weight: bold;
 }
 
-.modal-content p, .modal-content .text {
+.modal-content p,
+.modal-content .text {
   margin: 10px;
   font-size: 13px;
+  font-weight: 600;
   color: #373867;
   align-self: flex-start;
 }
 
-.btn-modal{
-    background: rgba(55, 56, 103, 0.58);
-    color: #fff;
+.btn-modal {
+  background: rgba(55, 56, 103, 0.58);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .modal-content p,
+  .modal-content .text {
+    font-size: 15px;
+  }
 }
