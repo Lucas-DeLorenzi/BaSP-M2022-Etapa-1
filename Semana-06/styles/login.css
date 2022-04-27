@@ -66,3 +66,10 @@ main {
   background: rgba(55, 56, 103, 0.58);
   color: #fff;
 }
+
+
+@media (min-width: 768px) {
+  .login-container{
+    width: 500px;
+  }
+}
