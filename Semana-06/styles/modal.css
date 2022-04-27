@@ -30,7 +30,13 @@
 }
 
 .modal-content p, .modal-content .text {
-  margin: 20px;
-  font-size: 12px;
+  margin: 10px;
+  font-size: 13px;
   color: #373867;
+  align-self: flex-start;
+}
+
+.btn-modal{
+    background: rgba(55, 56, 103, 0.58);
+    color: #fff;
 }

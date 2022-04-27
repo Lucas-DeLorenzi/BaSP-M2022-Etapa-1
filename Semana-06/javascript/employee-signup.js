@@ -35,10 +35,25 @@ var validArray = [
   confirmSignupPass.value,
 ];
 
-var btnLogin = document.querySelector(".signup-form button");
+var btnSignup = document.querySelector(".signup-form button");
 var modal = document.createElement("div");
 var modalContent = document.createElement("div");
 var modalTitle = document.createElement("h2");
+modal.setAttribute("class", "modal");
+modalContent.setAttribute("class", "modal-content");
+body = document.querySelector("body");
+body.appendChild(modal);
+modalContent.appendChild(modalTitle);
+modal.appendChild(modalContent);
+for (var i = 0; i < 11; i++) {
+  var modalText = document.createElement("p");
+  modalContent.appendChild(modalText);
+  modalText.setAttribute("class", "text");
+}
+var btnModal = document.createElement("button");
+modalContent.appendChild(btnModal);
+btnModal.setAttribute("class", "btn-modal");
+btnModal.innerText = 'OK';
 
 var letters = "abcdefghijklmnñopqrstuvwxyz";
 var numbers = "0123456789";
@@ -67,7 +82,8 @@ signupEmail.addEventListener("focus", onFocusSignupEmail);
 signupPass.addEventListener("focus", onFocusSignupPass);
 confirmSignupPass.addEventListener("focus", onFocusConfirmPass);
 
-btnLogin.addEventListener("click", checkLogin);
+btnSignup.addEventListener("click", checkSignup);
+btnModal.addEventListener("click", closeModal);
 
 function onFocusFirstName() {
   onFocusElement(firstName, invalidName);
@@ -280,7 +296,7 @@ function comparePass(pass) {
 function validate(element, invalidElement, validateFunc, typeElement) {
   if (element.value == "") {
     element.style.border = "#D12500 2px solid";
-    invalidElement.innerText = "* required!";
+    invalidElement.innerText = "* required field!";
   } else if (!validateFunc(element.value)) {
     element.style.border = "#D12500 2px solid";
     invalidElement.innerText = "Enter a valid " + typeElement + "!";
@@ -295,7 +311,7 @@ function onFocusElement(element, invalidElement) {
   invalidElement.innerText = "";
 }
 
-function checkLogin(e) {
+function checkSignup(e) {
   e.preventDefault();
 
   var invalidsArray = [
@@ -326,33 +342,44 @@ function checkLogin(e) {
     "Password Confirm: ",
   ];
 
-  if (validateFields(invalidsArray)) {
-    createModal();
+  if (validateFields(invalidsArray) == "ok") {
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
     modalTitle.style.color = "green";
     modalTitle.innerText = "Successful sign in!";
     var modalTxt = document.querySelectorAll(".text");
+    modalTxt.forEach(function (element) {
+      element.style.display = "inherit";
+      element.style.color = "inherit";
+    });
     for (var i = 0; i < modalTxt.length; i++) {
       modalTxt[i].innerText = fields[i] + validArray[i];
     }
+  } else if (validateFields(invalidsArray) == "unfilled") {
+    modal.style.display = "flex";
+    modal.style.justifyContent = "center";
+    modalTitle.style.color = "red";
+    modalTitle.innerText = "Error! Unfilled fields!";
+    var modalTxt = document.querySelectorAll(".text");
+    modalTxt.forEach(function (element) {
+      element.style.display = "none";
+    });
   } else {
-    createModal();
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
     modalTitle.style.color = "red";
     modalTitle.innerText = "Sign in denied!";
     var modalTxt = document.querySelectorAll(".text");
+    modalTxt.forEach(function (element) {
+      element.style.display = "inherit";
+    });
     for (var i = 0; i < modalTxt.length; i++) {
       if (invalidsArray[i] != " " && invalidsArray[i] != "") {
         modalTxt[i].innerText = fields[i] + invalidsArray[i];
-        modalTxt[i].style.color = "red";
-      } else if(invalidsArray[i] == ""){
-        modalTxt[i].innerText = fields[i] + 'Unfilled field!';
-        modalTxt[i].style.color = "orange";
+      } else if (invalidsArray[i] == "") {
+        modalTxt[i].innerText = fields[i] + "* required field!";
       } else {
-        modalTxt[i].innerText = fields[i] + validArray[i];
-        modalTxt[i].style.color = "green";
+        modalTxt[i].style.display = "none";
       }
     }
   }
@@ -360,73 +387,24 @@ function checkLogin(e) {
 
 function validateFields(invalidsArray) {
   var ok = 0;
+  var unfilled = 0;
   invalidsArray.forEach(function (element) {
     if (element == " ") {
       ok++;
+    } else if (element == "") {
+      unfilled++;
     }
   });
-  return ok == invalidsArray.length;
+  if (ok == invalidsArray.length) {
+    return "ok";
+  } else if (unfilled == invalidsArray.length) {
+    return "unfilled";
+  }
 }
-// function checkLogin(e) {
-//     e.preventDefault();
-//     var invalidsArray = [
-//       invalidName.innerHTML,
-//       invalidLastName.innerHTML,
-//       invalidDni.innerHTML,
-//       invalidBirth.innerHTML,
-//       invalidPhone.innerHTML,
-//       invalidAddress.innerHTML,
-//       invalidPlace.innerHTML,
-//       invalidZip.innerHTML,
-//       invalidSignupEmail.innerHTML,
-//       invalidSignupPass.innerHTML,
-//       invalidConfirmPass.innerHTML,
-//     ];
 
-// var validArray = [
-//   firstName.value,
-//   lastName.value,
-//   dni.value,
-//   dateOfBirth.value,
-//   phone.value,
-//   address.value,
-//   place.value,
-//   zipCode.value,
-//   signupEmail.value,
-//   signupPass.value,
-//   confirmSignupPass.value,
-// ];
-//     if (!invalidsArray.includes("")) {
-//       createModal();
-//       modal.style.display = "flex";
-//       modal.style.justifyContent = "center";
-//       modalTitle.style.color = "green";
-//       modalTitle.innerText = "Successful sign in!";
-//       var modalTxt = document.querySelectorAll(".text");
-//       for (var i = 0; i < modalTxt.length; i++) {
-//         modalTxt[i].innerText = validArray[i];
-//       }
-//     } else if (invalidsArray.includes("* required!")) {
-//       createModal();
-//       modal.style.display = "flex";
-//       modal.style.justifyContent = "center";
-//       modalTitle.style.color = "red";
-//       modalTitle.innerText = "Sign in denied!";
-//       var modalTxt = document.querySelectorAll(".text");
-//       for (var i = 0; i < modalTxt.length; i++) {
-//         if (invalidsArray[i] == "") {
-//           modalTxt[i].innerText = validArray[i];
-//         } else {
-//           modalTxt[i].innerText = invalidsArray[i];
-//         }
-//       }
-//     } else {
-//       modal.style.display = "flex";
-//       modal.style.justifyContent = "center";
-//       modalTitle.style.color = "red";
-//       modalTitle.innerText = "Unfilled fields!";
-//     }
-//   }
+function closeModal() {
+  modal.style.display = "none";
+}
 
 function allLetters(name) {
   var lettersOk = 0;
@@ -488,18 +466,4 @@ function validateAlphanumericPassword(alpha) {
 function validateEmail(email) {
   var re = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
   return re.test(email);
-}
-
-function createModal() {
-  modal.setAttribute("class", "modal");
-  modalContent.setAttribute("class", "modal-content");
-  body = document.querySelector("body");
-  body.appendChild(modal);
-  modalContent.appendChild(modalTitle);
-  modal.appendChild(modalContent);
-  for (var i = 0; i < 11; i++) {
-    var modalText = document.createElement("p");
-    modalContent.appendChild(modalText);
-    modalText.setAttribute("class", "text");
-  }
 }
