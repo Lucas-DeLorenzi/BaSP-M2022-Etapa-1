@@ -9,3 +9,5 @@ This repository contains the works of Lucas De Lorenzi for each challenge of the
     * _Click **[here](https://lucas-delorenzi.github.io/BaSP-M2022-Etapa-1/Semana-04/index.html)** to go to its deployment on Gh pages._
 * Semana-05: contains js exercises that cover the basics of variables, operators, strings, arrays, control flow structures (If Else and For) and functions in js.
     * _Click **[here](https://lucas-delorenzi.github.io/BaSP-M2022-Etapa-1/Semana-05)** to go to its deployment on Gh pages._
+* Semana-06: contains the old landing page with the login and sign up screens and their functionalities. All logics, validations and modal messages have been done with js.
+    * _Click **[here](https://lucas-delorenzi.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html)** to go to its deployment on Gh pages._
