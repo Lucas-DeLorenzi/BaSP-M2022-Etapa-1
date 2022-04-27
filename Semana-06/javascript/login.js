@@ -23,8 +23,6 @@ btnModal.innerText = "OK";
 
 var letters = "abcdefghijklmnñopqrstuvwxyz";
 var numbers = "0123456789";
-var unfilledEmailField = true;
-var unfilledPassField = true;
 
 emailInput.addEventListener("blur", validateLoginEmail);
 emailInput.addEventListener("focus", onFocusEmail);
@@ -71,15 +69,7 @@ function onFocusPass() {
 
 function checkLogin(e) {
   e.preventDefault();
-  if (unfilledEmailField || unfilledPassField) {
-    modal.style.display = "flex";
-    modal.style.justifyContent = "center";
-    modalTitle.style.color = "red";
-    modalTitle.innerText = "Unfilled fields!";
-    modalText1.innerText = "All fields must be completed";
-    unfilledEmailField = false;
-    unfilledPassField = false;
-  } else if (
+  if (
     validateAlphanumeric(passwordInput.value) &&
     validateEmail(emailInput.value)
   ) {
