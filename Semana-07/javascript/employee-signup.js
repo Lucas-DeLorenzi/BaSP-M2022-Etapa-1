@@ -22,7 +22,6 @@ var invalidSignupPass = document.querySelector(".invalid-signup-pass");
 var invalidConfirmPass = document.querySelector(".invalid-confirm-pass");
 var inputNames = document.querySelectorAll(".signup-form input");
 var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup?";
-var data = [];
 
 var validArray = [
   firstName.value,
@@ -87,6 +86,12 @@ confirmSignupPass.addEventListener("focus", onFocusConfirmPass);
 
 btnSignup.addEventListener("click", checkSignup);
 btnModal.addEventListener("click", closeModal);
+
+if (localStorage.length !== 0) {
+  inputNames.forEach((input) => {
+    input.value = localStorage.getItem(input.name);
+  });
+}
 
 function onFocusFirstName() {
   onFocusElement(firstName, invalidName);
@@ -356,11 +361,26 @@ function checkSignup(e) {
       element.style.color = "inherit";
     });
     apiQuery(parseUrl(url), modalTxt, inputNames, fields, invalidsArray);
-  } else if (validateFields(invalidsArray) == "unfilled") {
+  } else if (
+    validateFields(invalidsArray) == "unfilled" &&
+    validateInputValues()
+  ) {
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
     modalTitle.style.color = "red";
     modalTitle.innerText = "Error! Unfilled fields!";
+    var modalTxt = document.querySelectorAll(".text");
+    modalTxt.forEach(function (element) {
+      element.style.display = "none";
+    });
+  } else if (
+    validateFields(invalidsArray) == "unfilled" &&
+    !validateInputValues()
+  ) {
+    modal.style.display = "flex";
+    modal.style.justifyContent = "center";
+    modalTitle.style.color = "red";
+    modalTitle.innerText = "Error! The data has already been loaded!";
     var modalTxt = document.querySelectorAll(".text");
     modalTxt.forEach(function (element) {
       element.style.display = "none";
@@ -376,6 +396,16 @@ function checkSignup(e) {
     });
     apiQuery(parseUrl(url), modalTxt, inputNames, fields, invalidsArray);
   }
+}
+
+function validateInputValues() {
+  var empty = 0;
+  inputNames.forEach(function (input) {
+    if (input.value == "") {
+      empty++;
+    }
+  });
+  return empty === inputNames.length;
 }
 
 function validateFields(invalidsArray) {
@@ -461,11 +491,11 @@ function validateEmail(email) {
   return re.test(email);
 }
 
-function parseUrl( url) {
+function parseUrl(url) {
   var inputValuesArray = validArray.slice();
   var splitDateArr = inputValuesArray[3].split("/");
   inputValuesArray[3] = `${splitDateArr[1]}/${splitDateArr[0]}/${splitDateArr[2]}`;
-  console.log(inputValuesArray)
+  console.log(inputValuesArray);
   for (let i = 0; i < inputValuesArray.length; i++) {
     url += `${inputNames[i].name}=${inputValuesArray[i]}&`;
   }
@@ -500,6 +530,23 @@ function successResponse(jsonResponse, modalTxt, inputNames, fields) {
       modalTxt[i].innerText = `${fields[i]} ${
         jsonResponse.data[inputNames[i].name]
       }`;
+    }
+  }
+  setLocal(jsonResponse);
+}
+
+function setLocal(jsonResponse) {
+  for (let i = 0; i < inputNames.length; i++) {
+    if (inputNames[i].name == "password") {
+      localStorage.setItem(
+        inputNames[i].name,
+        jsonResponse.data[inputNames[i].name][0]
+      );
+    } else {
+      localStorage.setItem(
+        inputNames[i].name,
+        jsonResponse.data[inputNames[i].name]
+      );
     }
   }
 }

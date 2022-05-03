@@ -9,6 +9,8 @@ var modalTitle = document.createElement("h2");
 var modalText1 = document.createElement("p");
 var modalText2 = document.createElement("p");
 var btnModal = document.createElement("button");
+var url = "https://basp-m2022-api-rest-server.herokuapp.com/login?";
+
 modal.setAttribute("class", "modal");
 modalContent.setAttribute("class", "modal-content");
 body = document.querySelector("body");
@@ -76,9 +78,10 @@ function checkLogin(e) {
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
     modalTitle.style.color = "green";
-    modalTitle.innerText = "Successful sign in!";
-    modalText1.innerText = "Email: " + emailInput.value;
-    modalText2.innerText = "Password: " + passwordInput.value;
+    modalTitle.innerText = "Loading...";
+    modalText1.style.display = 'none';
+    modalText2.style.display = 'none';
+    apiQuery(parseUrl(url));
   } else {
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
@@ -86,6 +89,8 @@ function checkLogin(e) {
     modalTitle.innerText = "Sign in denied!";
     modalText1.innerText = "Incorrect email or password ";
     modalText2.innerText = "";
+    modalText1.style.display = 'inherit';
+    modalText2.style.display = 'inherit';
   }
 }
 
@@ -113,4 +118,31 @@ function validateAlphanumeric(pass) {
 
 function closeModal() {
   modal.style.display = "none";
+}
+
+function parseUrl(url) {
+  url += `${emailInput.name}=${emailInput.value}&${passwordInput.name}=${passwordInput.value}`;
+  console.log(url);
+  return url;
+}
+
+function apiQuery(parseUrl) {
+  fetch(parseUrl)
+    .then((response) => response.json())
+    .then((jsonResponse) => {
+      console.log(jsonResponse);
+      successResponse(jsonResponse);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+function successResponse(jsonResponse) {
+  if (jsonResponse.success) {
+    modalTitle.innerText = jsonResponse.msg;
+  } else {
+    modalTitle.style.color= 'red';
+    modalTitle.innerText = jsonResponse.msg;
+  }
 }
