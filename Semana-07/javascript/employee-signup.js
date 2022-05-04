@@ -565,7 +565,9 @@ function successResponse(jsonResponse, modalTxt, inputNames, fields) {
 
 function setLocal(jsonResponse) {
   for (let i = 0; i < inputNames.length; i++) {
-    if (inputNames[i].name == "password") {
+    if (inputNames[i].name == "dob") {
+      localStorage.setItem(inputNames[i].name, inputNames[i].value);
+    } else if (inputNames[i].name == "password") {
       localStorage.setItem(
         inputNames[i].name,
         jsonResponse.data[inputNames[i].name][0]
