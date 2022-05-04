@@ -175,8 +175,6 @@ function validateDniLength(numbers) {
   return allNumbers(numbers) && numbers.length > 7;
 }
 
-console.log((splitDate = dateOfBirth.value.split("/")));
-
 function validateDateOfBirth() {
   validate(
     dateOfBirth,
@@ -189,6 +187,7 @@ function validateDateOfBirth() {
 
 function validateDateFormat(date) {
   var splitDate = date.split("/");
+  var currentTime = new Date();
   return (
     splitDate.length == 3 &&
     allNumbers(splitDate[0]) &&
@@ -197,12 +196,33 @@ function validateDateFormat(date) {
     splitDate[0].length == 2 &&
     splitDate[1].length == 2 &&
     splitDate[2].length == 4 &&
-    splitDate[0] < 32 &&
-    splitDate[0] > 0 &&
-    splitDate[1] < 13 &&
-    splitDate[1] > 0 &&
     splitDate[2] > 1941 &&
-    splitDate[2] < 2023
+    splitDate[2] < currentTime.getFullYear() - 16 &&
+    (oddDaysMonth(splitDate) || evenDaysMonth(splitDate))
+  );
+}
+
+function oddDaysMonth(splitDate) {
+  var odd = ["01", "03", "05", "07", "08", "10", "12"];
+  return odd.includes(splitDate[1]) && splitDate[0] < 32 && splitDate[0] > 0;
+}
+
+function evenDaysMonth(splitDate) {
+  var even = ["04", "06", "09", "11"];
+  if (splitDate[1] == "02") {
+    if (leapYear(splitDate[2])) {
+      return splitDate[0] < 30 && splitDate[0] > 0;
+    } else {
+      return splitDate[0] < 29 && splitDate[0] > 0;
+    }
+  } else {
+    return even.includes(splitDate[1]) && splitDate[0] < 31 && splitDate[0] > 0;
+  }
+}
+
+function leapYear(year) {
+  return (
+    (year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)
   );
 }
 
@@ -389,12 +409,20 @@ function checkSignup(e) {
     modal.style.display = "flex";
     modal.style.justifyContent = "center";
     modalTitle.style.color = "red";
-    modalTitle.innerText = "Loading...";
+    modalTitle.innerText = "Sign in denied!";
     var modalTxt = document.querySelectorAll(".text");
     modalTxt.forEach(function (element) {
       element.style.display = "inherit";
     });
-    apiQuery(parseUrl(url), modalTxt, inputNames, fields, invalidsArray);
+    for (var i = 0; i < modalTxt.length; i++) {
+      if (invalidsArray[i] != " " && invalidsArray[i] != "") {
+        modalTxt[i].innerText = fields[i] + invalidsArray[i];
+      } else if (invalidsArray[i] == "") {
+        modalTxt[i].innerText = fields[i] + "* required field!";
+      } else {
+        modalTxt[i].style.display = "none";
+      }
+    }
   }
 }
 
@@ -547,19 +575,6 @@ function setLocal(jsonResponse) {
         inputNames[i].name,
         jsonResponse.data[inputNames[i].name]
       );
-    }
-  }
-}
-
-function unsuccessResponse(modalTxt, fields, invalidsArray) {
-  modalTitle.innerText = "Registration error!";
-  for (var i = 0; i < modalTxt.length; i++) {
-    if (invalidsArray[i] != " " && invalidsArray[i] != "") {
-      modalTxt[i].innerText = fields[i] + invalidsArray[i];
-    } else if (invalidsArray[i] == "") {
-      modalTxt[i].innerText = fields[i] + "* required field!";
-    } else {
-      modalTxt[i].style.display = "none";
     }
   }
 }
